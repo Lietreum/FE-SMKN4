@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #00c6ff;
+  background-color: #111;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00c6ff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.square:hover {
+  background-color: #00c6ff;
+  animation: flaming 2s infinite;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  width: 240px; /* Adjust the width as needed */
+  margin: 20px;
+}
+
+.status {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff, 0 0 50px #00c6ff, 0 0 60px #00c6ff;
+}
+
+.game {
+  display: flex;
+  align-items: center;
+}
+
+.game-info {
+  text-align: center;
+}
+
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 1rem;
+  background-color: #00c6ff;
+  color: #111;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0078a8;
+}
+
+@keyframes flaming {
+  0% {
+    box-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff, 0 0 15px #00c6ff, 0 0 20px #00c6ff;
+  }
+  50% {
+    box-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff, 0 0 15px #00c6ff, 0 0 30px #00c6ff, 0 0 35px #00c6ff, 0 0 40px #00c6ff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff, 0 0 15px #00c6ff, 0 0 20px #00c6ff;
+  }
+}
